@@ -1,5 +1,5 @@
 #+ summary: Returns the basic info of the FAIRDataPoint
-#+ endpoint: http://136.243.4.200:8087/fdp.ttl
+#+ endpoint: https://raw.githubusercontent.com/DTL-FAIRData/metadata-schema/master/example-data/fdpMetadata.ttl
 #+ mime: text/turtle
 #+ tags:
 #+   - FAIRDataPoint
