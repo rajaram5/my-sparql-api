@@ -1,0 +1,36 @@
+#+ summary: Returns the basic info of the FAIRDataPoint distribution
+#+ endpoint: http://136.243.4.200:8087/fdp/distribution/gene_disease_association_html.ttl
+#+ mime: text/turtle
+#+ tags:
+#+   - FAIRDataPoint
+#+ method: GET
+#+ pagination: 50
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?distribution ?distributionName ?distributionDescription ?distributionLicense ?distributionContentUrl ?distributionMediaType  ?distributionPublisher ?publisherName {
+  
+  ?distribution a dcat:Distribution;
+      dcterms:title ?distributionName;
+      dcterms:publisher ?distributionPublisher;
+      dcterms:license ?distributionLicense. 
+  
+  OPTIONAL {
+    ?distribution dcterms:description ?distributionDescription.
+  }
+
+  OPTIONAL {
+    ?distribution dcat:mediaType ?distributionMediaType. 
+  }
+  
+  OPTIONAL {
+    ?distributionPublisher foaf:name ?publisherName. 
+  }
+
+  OPTIONAL {
+    ?distribution dcat:accessURL|dcat:downloadURL ?distributionContentUrl.
+  }
+  
+}
