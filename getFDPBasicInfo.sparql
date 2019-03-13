@@ -1,5 +1,5 @@
 #+ summary: Returns the basic info of the FAIRDataPoint
-#+ endpoint: http://136.243.4.200:8087/fdp
+#+ endpoint: http://136.243.4.200:8087/fdp.ttl
 #+ mime: text/turtle
 #+ tags:
 #+   - FAIRDataPoint
