@@ -7,7 +7,7 @@
 #+ pagination: 50
 
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX prefix dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 SELECT DISTINCT ?catalog ?catalogName ?catalogDescription ?catalogThemeTaxonomy ?catalogPublisher ?publisherName ?dataset  {
@@ -15,7 +15,7 @@ SELECT DISTINCT ?catalog ?catalogName ?catalogDescription ?catalogThemeTaxonomy 
   ?catalog a dcat:Catalog;
       dcterms:title ?catalogName;
       dcterms:publisher ?catalogPublisher;
-      dcat:themeTaxonomy ?catalogThemeTaxonomy 
+      dcat:themeTaxonomy ?catalogThemeTaxonomy. 
   
   OPTIONAL {
     ?catalog dcterms:description ?catalogDescription.
