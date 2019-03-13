@@ -1,4 +1,4 @@
-#+ summary: Returns the basic info of the FAIRDataPoint catalog
+#+ summary: Returns the basic info of the FAIRDataPoint's catalog
 #+ endpoint: http://136.243.4.200:8087/fdp/catalog/textmining.ttl
 #+ mime: text/turtle
 #+ tags:
