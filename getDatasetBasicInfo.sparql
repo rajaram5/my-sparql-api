@@ -1,5 +1,5 @@
 #+ summary: Returns the basic info of the FAIRDataPoint's dataset
-#+ endpoint: http://136.243.4.200:8087/fdp/dataset/gene_disease_association.ttl
+#+ endpoint: https://raw.githubusercontent.com/DTL-FAIRData/metadata-schema/master/example-data/datasetMetadata.ttl
 #+ mime: text/turtle
 #+ tags:
 #+   - FAIRDataPoint
