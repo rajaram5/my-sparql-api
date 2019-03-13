@@ -1,5 +1,5 @@
 #+ summary: Returns the basic info of the FAIRDataPoint's distribution
-#+ endpoint: http://136.243.4.200:8087/fdp/distribution/gene_disease_association_html.ttl
+#+ endpoint: https://raw.githubusercontent.com/DTL-FAIRData/metadata-schema/master/example-data/distributionMetadata.ttl
 #+ mime: text/turtle
 #+ tags:
 #+   - FAIRDataPoint
