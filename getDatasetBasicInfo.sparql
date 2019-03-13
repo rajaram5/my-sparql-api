@@ -1,0 +1,36 @@
+#+ summary: Returns the basic info of the FAIRDataPoint dataset
+#+ endpoint: http://136.243.4.200:8087/fdp/dataset/gene_disease_association.ttl
+#+ mime: text/turtle
+#+ tags:
+#+   - FAIRDataPoint
+#+ method: GET
+#+ pagination: 50
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?dataset ?datasetName ?datasetDescription ?dataseTheme ?datasetKeyword ?datasetPublisher ?publisherName ?distribution  {
+  
+  ?dataset a dcat:Dataset;
+      dcterms:title ?datasetName;
+      dcterms:publisher ?datasetPublisher;
+      dcat:theme ?datasetTheme. 
+  
+  OPTIONAL {
+    ?dataset dcterms:description ?datasetDescription.
+  }
+  
+  OPTIONAL {
+    ?dataset dcat:distribution ?distribution. 
+  } 
+
+  OPTIONAL {
+    ?dataset dcat:keyword ?datasetKeyword. 
+  }
+  
+  OPTIONAL {
+    ?datasetPublisher foaf:name ?publisherName. 
+  }
+  
+}
