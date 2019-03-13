@@ -1,0 +1,32 @@
+#+ summary: Returns the basic info of the FAIRDataPoint catalog
+#+ endpoint: http://136.243.4.200:8087/fdp/catalog/textmining.ttl
+#+ mime: text/turtle
+#+ tags:
+#+   - FAIRDataPoint
+#+ method: GET
+#+ pagination: 50
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prefix dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?catalog ?catalogName ?catalogDescription ?catalogThemeTaxonomy ?catalogPublisher ?publisherName ?dataset  {
+  
+  ?catalog a dcat:Catalog;
+      dcterms:title ?catalogName;
+      dcterms:publisher ?catalogPublisher;
+      dcat:themeTaxonomy ?catalogThemeTaxonomy 
+  
+  OPTIONAL {
+    ?catalog dcterms:description ?catalogDescription.
+  }
+  
+  OPTIONAL {
+    ?catalog dcat:dataset ?dataset. 
+  } 
+  
+  OPTIONAL {
+    ?catalogPublisher foaf:name ?publisherName. 
+  }
+  
+}
